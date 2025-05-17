@@ -4,7 +4,7 @@ public class Point {
     private int x;
     private int y;
 
-    public Point(int x , int y){
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -25,7 +25,18 @@ public class Point {
         this.y = y;
     }
 
-    public int distance(){
-        
+    public double distance() {
+        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+    }
+
+    public double distance(Point point) {
+        if (point == null) {
+            return 0;
+        }
+        return Math.sqrt(Math.pow((x - point.x), 2) + Math.pow((y - point.y), 2));
+    }
+
+    public double distance(int a , int b){
+        return Math.sqrt(Math.pow((x - a), 2) + Math.pow((y - b), 2));
     }
 }
